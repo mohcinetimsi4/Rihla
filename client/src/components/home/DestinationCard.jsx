@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const categories = ["Tous", "Nature", "Plages", "Villes", "Espaces"];
@@ -108,40 +109,48 @@ const PlacesSection = () => {
 
             {/* Places Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
-                {filtered.map((place) => (
-                    <div key={place.id} className="flex flex-col">
-                        {/* Image */}
-                        <div className="w-full h-52 rounded-xl overflow-hidden mb-3">
-                            <img
-                                src={place.image}
-                                alt={place.name}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                        </div>
-
-                        {/* Info Row */}
-                        <div className="flex items-center justify-between mb-1.5">
-                            <div className="flex items-center gap-1.5">
-                                <span className="text-lg">{place.icon}</span>
-                                <span className="font-semibold text-gray-900 text-sm">{place.name}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <StarIcon />
-                                <span className="text-sm font-semibold text-gray-700">{place.rating}</span>
-                            </div>
-                        </div>
-
-                        {/* Description */}
-                        <p className="text-gray-500 text-xs leading-relaxed">
-                            {place.description}{" "}
-                            <a href="#" className="text-orange-500 font-medium hover:underline">
-                                En savoir plus
-                            </a>
-                        </p>
-                    </div>
-                ))}
+    {filtered.map((place) => (
+        <Link
+            to={`/destination/${place.id}`}
+            key={place.id}
+            className="flex flex-col hover:scale-[1.02] transition-transform cursor-pointer"
+        >
+            {/* Image */}
+            <div className="w-full h-52 rounded-xl overflow-hidden mb-3">
+                <img
+                    src={place.image}
+                    alt={place.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
             </div>
 
+            {/* Info Row */}
+            <div className="flex items-center justify-between mb-1.5">
+                <div className="flex items-center gap-1.5">
+                    <span className="text-lg">{place.icon}</span>
+                    <span className="font-semibold text-gray-900 text-sm">
+                        {place.name}
+                    </span>
+                </div>
+
+                <div className="flex items-center gap-1">
+                    <StarIcon />
+                    <span className="text-sm font-semibold text-gray-700">
+                        {place.rating}
+                    </span>
+                </div>
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-500 text-xs leading-relaxed">
+                {place.description}{" "}
+                <span className="text-orange-500 font-medium hover:underline">
+                    En savoir plus
+                </span>
+            </p>
+        </Link>
+    ))}
+</div>
             {/* Pagination */}
             <div className="flex items-center justify-between mt-6">
                 <button
