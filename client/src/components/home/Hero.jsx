@@ -41,7 +41,7 @@ const Hero = () => {
                                 <option value="constantine">Constantine</option>
                                 <option value="bejaia">Béjaïa</option>
                                 <option value="tlemcen">Tlemcen</option>
-                                <option value="ghardaia">Ghardaïa</option>
+                                <option value="ghardaia">Ghgitardaïa</option>
                             </select>
                             <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
