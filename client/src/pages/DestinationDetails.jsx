@@ -76,6 +76,7 @@ const destinations = [
     },
 ];
 
+
 function DestinationDetails() {
     useEffect(() => {
     window.scrollTo(0, 0);
