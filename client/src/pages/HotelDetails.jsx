@@ -53,7 +53,7 @@ const hotels = [
     {
         id: 5,
         title: "Ibis Setif",
-        image: "/images/ibis-setif.jpg",
+        image: "/images/ibis-setif.png",
         category: "Luxe",
         rating: 4.5,
         description: "Localisé en plein centre ville, l'ibis Sétif est le premier hôtel économique du groupe Accor dans la ville, idéal pour les voyageurs d'affaires.",
@@ -64,7 +64,7 @@ const hotels = [
     {
         id: 6,
         title: "Ibis Alger Aéroport",
-        image: "/images/ibis-alger-aeroport.jpg",
+        image: "/images/ibis-alger.png",
         category: "Luxe",
         rating: 4.7,
         description: "Situé à 5 min de l'aéroport international Houari Boumediene, l'ibis Alger Aéroport propose 264 chambres climatisées et insonorisées.",
