@@ -1,11 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = ({ transparent = true }) => {
     const [user, setUser] = useState(null); // start as null; plug in your auth context here later
     // const [user, setUser] = useState({ name: "Mohcine" }); // ← swap back to test logged-in state
+    const [activeSection, setActiveSection] = useState(null);
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogout = () => {
         setUser(null);
@@ -25,16 +27,44 @@ const Navbar = ({ transparent = true }) => {
 
             {/* Nav Links */}
             <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-                <Link to="/lieux" className={`font-medium hover:text-orange-400 transition-colors ${transparent ? "text-white" : "text-gray-700"}`}>
-                    Lieux
-                </Link>
-                <Link to="/hotels" className={`font-medium hover:text-orange-400 transition-colors ${transparent ? "text-white" : "text-gray-700"}`}>
+                <Link
+                                   to="/destinations"
+                                   className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
+                                       location.pathname === "/destinations"
+                                           ? "text-orange-400"
+                                           : "text-orange-400 hover:text-orange-400"
+                                   }`}
+                               >
+                                   Lieux
+                               </Link>
+                <Link
+                    to="/hotels"
+                    className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
+                        location.pathname === "/hotels"
+                            ? "text-orange-400"
+                            : "text-orange-400 hover:text-orange-400"
+                    }`}
+                >
                     Hôtels
                 </Link>
-                <Link to="/restaurants" className={`font-medium hover:text-orange-400 transition-colors ${transparent ? "text-white" : "text-gray-700"}`}>
+                <Link
+                    to="/restaurants"
+                    className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
+                        location.pathname === "/restaurants"
+                            ? "text-orange-400"
+                            : "text-orange-400 hover:text-orange-400"
+                    }`}
+                >
                     Restaurant
                 </Link>
-                <Link to="/guides" className={`font-medium hover:text-orange-400 transition-colors ${transparent ? "text-white" : "text-gray-700"}`}>
+                  <Link
+                    to="/guides"
+                    className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
+                        location.pathname === "/guides"
+                            ? "text-orange-400"
+                            : "text-orange-400 hover:text-orange-400"
+                    }`}
+                >
                     Guides
                 </Link>
 
@@ -82,7 +112,7 @@ const Navbar = ({ transparent = true }) => {
                         </Link>
                         <button
                             onClick={handleLogout}
-                            className="text-white bg-red-500 hover:bg-red-600 font-medium px-4 py-1.5 rounded-full transition-colors" // ✅ updated color
+                            className="text-white bg-red-500 hover:bg-red-600 font-medium px-4 py-1.5 rounded-full transition-colors"
                         >
                             Logout
                         </button>

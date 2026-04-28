@@ -1,68 +1,68 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const categories = ["Tous", "Nature", "Plages", "Villes", "Espaces"];
+const categories = ["Tous","Classique", "Luxe", "resort", "Dortoire"];
 
 const places = [
     {
         id: 1,
-        image: "/images/grande-mosquee.jpg",
-        icon: "🕌",
-        name: "La grande mosquée d'Alger",
+        image: "/images/atlantis-bejaia.jpg",
+        icon: "",
+        name: "Atlantis Béjaïa Aéroport",
         rating: 4.6,
         description:
-            "la troisième plus grande au monde, derrière la mosquée al-Haram et la mosquée du Prophète …",
-        category: "Villes",
+            "Hotel majestieux, restaurant spa et piscine…",
+        category: "Luxe",
     },
     {
         id: 2,
-        image: "/images/lac-agoulmim.jpg",
-        icon: "🏔️",
-        name: "Lac Agoulmim",
+        image: "/images/club-pin.jpg",
+        icon: "",
+        name: " Sheraton Club Des Pins Resort",
         rating: 4.3,
         description:
-            "un lac situé dans le massif de l'Akfadou, sur le territoire de la commune de Tibanel…",
-        category: "Nature",
+            "Vous êtes à la recherche d'un cadre de luxe et d'une gamme de services conçus pour sublimer votre séjour à Staoueli ?",
+        category: "resort",
     },
     {
         id: 3,
-        image: "/images/assekrem.jpg",
+        image: "/images/hotel-oran.jpg",
         icon: "⛰️",
-        name: "Assekrem",
+        name: "Royal Hotel Oran - MGallery Collection",
         rating: 4.1,
         description:
-            "L'Assekrem est un haut plateau situé dans les montagnes du Hoggar, dans le sud de l'Algérie…",
-        category: "Nature",
+            "Luxe et élégance vous attendent au Royal Hotel MGallery Oran . Dans son superbe palace historique orné de mobilier ancien et d'oeuvres d'art…",
+        category: "Classique",
     },
     {
         id: 4,
-        image: "/images/cap-carbon.jpg",
-        icon: "🏕️",
-        name: "Cap Carbon - Bejaia",
+        image: "/images/royal-tulip-skikda.jpg",
+        icon: "",
+        name: "Royal Tulip Skikda",
         rating: 4.6,
         description:
-            "Le cap Carbon est un cap algérien situé dans la wilaya de Béjaïa, au nord du port de Béjaïa…",
-        category: "Plages",
+            " un hôtel 5 étoiles de luxe situé à Filfila, offrant un accès direct à une plage privée. …",
+        category: "Luxe",
     },
     {
         id: 5,
-        image: "/images/djemila.jpg",
-        icon: "🏛️",
-        name: "Ruines romaines de Djemila",
+        image: "/images/ibis-setif.png",
+        icon: "",
+        name: "Ibis Setif",
         rating: 4.5,
         description:
-            "Le site occupe environ 42 hectares. Il a été classé au patrimoine mondial en 1982…",
-        category: "Espaces",
+            "Localisé en plein centre ville, l'ibis Sétif est le premier hôtel économique du groupe Accor dans la ville…",
+        category: "Luxe",
     },
     {
         id: 6,
-        image: "/images/ghardaia.jpg",
-        icon: "🏰",
-        name: "Le monument de Sidi Abaz - Ghardaïa",
+        image: "/images/ibis-alger.png",
+        icon: "",
+        name: "Ibis Alger",
         rating: 4.7,
         description:
-            "La vallée du M'Zab est classée au patrimoine mondial de l'UNESCO pour ses ksour (villages fortifiés)…",
-        category: "Villes",
+            "Situé à 5 min de l'aéroport international Houari Boumediene, l'ibis Alger Aéroport propose 264 chambres climatisées et insonorisées …",
+        category: "Luxe",
     },
 ];
 
@@ -75,7 +75,7 @@ const StarIcon = ({ filled = true }) => (<svg
 </svg>
 );
 
-const PlacesSection = () => {
+const HotelsSection = () => {
     const [activeCategory, setActiveCategory] = useState("Tous");
     const [currentPage, setCurrentPage] = useState(3);
 
@@ -88,7 +88,7 @@ const PlacesSection = () => {
         <section className="py-16 px-6 md:px-12 max-w-6xl mx-auto">
             {/* Section Title */}
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-                Découvrez des endroits que vous allez adorer !
+                 Trouvez l'hôtel parfait pour votre séjour en Algérie 
             </h2>
 
             {/* Category Filters */}
@@ -110,8 +110,7 @@ const PlacesSection = () => {
             {/* Places Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
     {filtered.map((place) => (
-        <Link
-            to={`/destination/${place.id}`}
+        <Link to={`/hotel/${place.id}`}
             key={place.id}
             className="flex flex-col hover:scale-[1.02] transition-transform cursor-pointer"
         >
@@ -188,6 +187,4 @@ const PlacesSection = () => {
     );
 };
 
-export default PlacesSection;
-
-
+export default HotelsSection;
