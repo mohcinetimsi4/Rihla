@@ -39,12 +39,12 @@ function StepIndicator({ current }) {
                         <div className="flex items-center gap-1.5">
                             <div
                                 className={`w-6 h-6 rounded-full text-xs font-medium flex items-center justify-center transition-all
-                                    ${isDone ? "bg-green-500 text-white" : isActive ? "bg-orange-500 text-white" : "bg-gray-100 text-gray-400 border border-gray-200"}`}
+                                    ${isDone ? "bg-green-500 text-white" : isActive ? "bg-sky-500 text-white" : "bg-gray-100 text-gray-400 border border-gray-200"}`}
                             >
                                 {isDone ? <FaCheck size={8} /> : n}
                             </div>
                             <span
-                                className={`text-xs ${isActive ? "text-orange-500 font-medium" : "text-gray-400"}`}
+                                className={`text-xs ${isActive ? "text-sky-500 font-medium" : "text-gray-400"}`}
                             >
                                 {label}
                             </span>
@@ -73,7 +73,7 @@ function Step1({ form, onChange }) {
                         value={form.checkin}
                         min={today}
                         onChange={(e) => onChange("checkin", e.target.value)}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                     />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -83,7 +83,7 @@ function Step1({ form, onChange }) {
                         value={form.checkout}
                         min={form.checkin || today}
                         onChange={(e) => onChange("checkout", e.target.value)}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                     />
                 </div>
             </div>
@@ -99,7 +99,7 @@ function Step1({ form, onChange }) {
                     <select
                         value={form.adults}
                         onChange={(e) => onChange("adults", e.target.value)}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                     >
                         {[1, 2, 3, 4].map((n) => (
                             <option key={n} value={n}>
@@ -113,7 +113,7 @@ function Step1({ form, onChange }) {
                     <select
                         value={form.children}
                         onChange={(e) => onChange("children", e.target.value)}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                     >
                         {[0, 1, 2, 3].map((n) => (
                             <option key={n} value={n}>
@@ -140,7 +140,7 @@ function Step1({ form, onChange }) {
                 ))}
             </div>
             <p className="text-xs text-gray-400 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block" />
+                <span className="w-1.5 h-1.5 bg-sky-400 rounded-full inline-block" />
                 Annulation gratuite jusqu'à 48h avant l'arrivée
             </p>
         </div>
@@ -162,17 +162,17 @@ function Step2({ selectedRoom, onSelectRoom, special, onSpecial }) {
                             onClick={() => onSelectRoom(room.id)}
                             className={`relative text-left p-4 rounded-xl border transition-all
                                 ${isSelected
-                                    ? "border-orange-400 bg-orange-50 border-[1.5px]"
-                                    : "border-gray-200 hover:border-orange-300"
+                                    ? "border-sky-400 bg-sky-50 border-[1.5px]"
+                                    : "border-gray-200 hover:border-sky-300"
                                 }`}
                         >
                             {isSelected && (
-                                <div className="absolute top-2.5 right-2.5 w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
+                                <div className="absolute top-2.5 right-2.5 w-4 h-4 bg-sky-500 rounded-full flex items-center justify-center">
                                     <FaCheck size={7} color="white" />
                                 </div>
                             )}
                             <div className="text-2xl mb-2">{room.icon}</div>
-                            <p className={`text-sm font-medium mb-1 ${isSelected ? "text-orange-500" : "text-gray-800"}`}>
+                            <p className={`text-sm font-medium mb-1 ${isSelected ? "text-sky-500" : "text-gray-800"}`}>
                                 {room.name}
                             </p>
                             {room.details.map((d, i) => (
@@ -180,7 +180,7 @@ function Step2({ selectedRoom, onSelectRoom, special, onSpecial }) {
                                     {d}
                                 </p>
                             ))}
-                            <p className="text-sm font-medium text-orange-500 mt-2">
+                            <p className="text-sm font-medium text-sky-500 mt-2">
                                 {room.price.toLocaleString("fr-DZ")} DA / nuit
                             </p>
                         </button>
@@ -196,7 +196,7 @@ function Step2({ selectedRoom, onSelectRoom, special, onSpecial }) {
                     value={special}
                     onChange={(e) => onSpecial(e.target.value)}
                     placeholder="Ex : chambre non-fumeur, étage élevé…"
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                 />
             </div>
         </div>
@@ -218,7 +218,7 @@ function Step3({ form, selectedRoom, nights, total, onChange }) {
                         placeholder="Mohamed"
                         value={form.prenom}
                         onChange={(e) => onChange("prenom", e.target.value)}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                     />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -228,7 +228,7 @@ function Step3({ form, selectedRoom, nights, total, onChange }) {
                         placeholder="Bensalem"
                         value={form.nom}
                         onChange={(e) => onChange("nom", e.target.value)}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                     />
                 </div>
             </div>
@@ -239,7 +239,7 @@ function Step3({ form, selectedRoom, nights, total, onChange }) {
                     placeholder="vous@email.com"
                     value={form.email}
                     onChange={(e) => onChange("email", e.target.value)}
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                 />
             </div>
             <div className="flex flex-col gap-1 mb-4">
@@ -249,7 +249,7 @@ function Step3({ form, selectedRoom, nights, total, onChange }) {
                     placeholder="+213 6XX XX XX XX"
                     value={form.phone}
                     onChange={(e) => onChange("phone", e.target.value)}
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200"
+                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-200"
                 />
             </div>
 
@@ -274,11 +274,11 @@ function Step3({ form, selectedRoom, nights, total, onChange }) {
                 ))}
                 <div className="border-t border-gray-200 pt-3 mt-2 flex justify-between text-base font-medium">
                     <span className="text-gray-700">Total estimé</span>
-                    <span className="text-orange-500">{total.toLocaleString("fr-DZ")} DA</span>
+                    <span className="text-sky-500">{total.toLocaleString("fr-DZ")} DA</span>
                 </div>
             </div>
             <p className="text-xs text-gray-400 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block" />
+                <span className="w-1.5 h-1.5 bg-sky-400 rounded-full inline-block" />
                 Paiement à l'hôtel · Confirmation par email
             </p>
         </div>
@@ -299,12 +299,12 @@ function SuccessScreen({ refNum, onClose }) {
             </p>
             <div className="bg-gray-50 rounded-xl px-6 py-4 inline-block mb-6">
                 <p className="text-xs text-gray-400">Numéro de réservation</p>
-                <p className="text-xl font-semibold text-orange-500 mt-1">{refNum}</p>
+                <p className="text-xl font-semibold text-sky-500 mt-1">{refNum}</p>
             </div>
             <br />
             <button
                 onClick={onClose}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-2.5 rounded-lg transition text-sm"
+                className="bg-sky-500 hover:bg-sky-600 text-white font-medium px-8 py-2.5 rounded-lg transition text-sm"
             >
                 Fermer
             </button>
@@ -352,7 +352,7 @@ function ReservationModal({ hotel, onClose }) {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div className="bg-white w-full max-w-lg rounded-2xl overflow-hidden shadow-xl">
                 {/* Header */}
-                <div className="bg-orange-500 px-6 py-5 flex items-center justify-between">
+                <div className="bg-sky-500 px-6 py-5 flex items-center justify-between">
                     <div>
                         <h2 className="text-white text-lg font-semibold">
                             Réserver votre chambre
@@ -407,7 +407,7 @@ function ReservationModal({ hotel, onClose }) {
                         )}
                         <button
                             onClick={handleNext}
-                            className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-medium py-2.5 rounded-lg transition text-sm"
+                            className="flex-1 bg-sky-500 hover:bg-sky-600 text-white font-medium py-2.5 rounded-lg transition text-sm"
                         >
                             {step === 3 ? "Confirmer la réservation →" : "Continuer →"}
                         </button>

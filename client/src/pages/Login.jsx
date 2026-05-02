@@ -94,7 +94,7 @@ const Login = () => {
                         { value: "4.8★", label: "Note moyenne" },
                     ].map((s) => (
                         <div key={s.label} className="text-center">
-                            <p className="text-2xl font-extrabold text-orange-400">{s.value}</p>
+                            <p className="text-2xl font-extrabold text-sky-400">{s.value}</p>
                             <p className="text-white/70 text-xs">{s.label}</p>
                         </div>
                     ))}
@@ -106,10 +106,10 @@ const Login = () => {
                 {/* Top nav (mobile logo + link) */}
                 <div className="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100 lg:hidden">
                     <Link to="/" className="flex items-center">
-                        <span className="text-orange-500 font-extrabold text-2xl tracking-tight leading-none">RIHLA</span>
-                        <span className="text-orange-500 font-extrabold text-2xl leading-none">.dz</span>
+                        <span className="text-sky-500 font-extrabold text-2xl tracking-tight leading-none">RIHLA</span>
+                        <span className="text-sky-500 font-extrabold text-2xl leading-none">.dz</span>
                     </Link>
-                    <Link to="/register" className="text-sm text-orange-500 font-semibold hover:underline">
+                    <Link to="/register" className="text-sm text-sky-500 font-semibold hover:underline">
                         S'inscrire →
                     </Link>
                 </div>
@@ -120,8 +120,8 @@ const Login = () => {
                         {submitted ? (
                             /* ── Success State ── */
                             <div className="text-center">
-                                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
@@ -129,7 +129,7 @@ const Login = () => {
                                 <p className="text-gray-500 text-sm mb-6">Bienvenue sur Rihla.dz. Vous allez être redirigé…</p>
                                 <button
                                     onClick={() => setSubmitted(false)}
-                                    className="text-orange-500 font-semibold text-sm hover:underline"
+                                    className="text-sky-500 font-semibold text-sm hover:underline"
                                 >
                                     ← Retour
                                 </button>
@@ -141,7 +141,7 @@ const Login = () => {
                                     <h1 className="text-3xl font-extrabold text-gray-900 mb-1">Bon retour &nbsp; 👋</h1>
                                     <p className="text-gray-500 text-sm">
                                         Pas encore de compte ?{" "}
-                                        <Link to="/register" className="text-orange-500 font-semibold hover:underline">
+                                        <Link to="/register" className="text-sky-500 font-semibold hover:underline">
                                             S'inscrire gratuitement
                                         </Link>
                                     </p>
@@ -196,11 +196,11 @@ const Login = () => {
                                                 type="checkbox"
                                                 checked={remember}
                                                 onChange={(e) => setRemember(e.target.checked)}
-                                                className="w-4 h-4 accent-orange-500 cursor-pointer"
+                                                className="w-4 h-4 accent-sky-500 cursor-pointer"
                                             />
                                             <span className="text-sm text-gray-600">Se souvenir de moi</span>
                                         </label>
-                                        <a href="#" className="text-sm text-orange-500 font-medium hover:underline">
+                                        <a href="#" className="text-sm text-sky-500 font-medium hover:underline">
                                             Mot de passe oublié ?
                                         </a>
                                     </div>
@@ -208,7 +208,7 @@ const Login = () => {
                                     {/* Submit */}
                                     <button
                                         type="submit"
-                                        className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 rounded-xl transition-colors shadow-sm mt-1"
+                                        className="w-full bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white font-semibold py-3 rounded-xl transition-colors shadow-sm mt-1"
                                     >
                                         Se connecter
                                     </button>

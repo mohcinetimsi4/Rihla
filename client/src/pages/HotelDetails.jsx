@@ -84,7 +84,78 @@ function HotelDetails() {
     const [openReservation, setOpenReservation] = useState(false);
     const [note, setNote] = useState(null);
 
+    // ── Favoris ──────────────────────────────────────────
+    const [enregistre, setEnregistre] = useState(false);
+    const [loadingFavori, setLoadingFavori] = useState(false);
+    const [msgFavori, setMsgFavori] = useState("");
+
+    // Récupère le username depuis le localStorage (adapte si tu utilises un Context)
+    const username = localStorage.getItem("username");
+
     const hotel = hotels.find((h) => h.id === parseInt(id));
+
+    // Vérifie si l'hôtel est déjà en favori au chargement
+    useEffect(() => {
+        if (!username || !hotel) return;
+        fetch(`http://localhost:3000/api/favoris/${username}`)
+            .then((res) => res.json())
+            .then((data) => {
+                const dejaDedans = data.some((f) => f.id === hotel.id);
+                setEnregistre(dejaDedans);
+            })
+            .catch(() => {});
+    }, [username, hotel]);
+
+    const handleEnregistrer = async () => {
+        if (!username) {
+            setMsgFavori("⚠️ Connectez-vous pour enregistrer.");
+            setTimeout(() => setMsgFavori(""), 3000);
+            return;
+        }
+
+        setLoadingFavori(true);
+        setMsgFavori("");
+
+        try {
+            if (!enregistre) {
+                // ── AJOUTER aux favoris ──
+                const res = await fetch("http://localhost:3000/api/favoris/ajouter", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, id_lieu: hotel.id }),
+                });
+                const data = await res.json();
+
+                if (res.ok) {
+                    setEnregistre(true);
+                    setMsgFavori("❤️ Ajouté aux favoris !");
+                } else {
+                    setMsgFavori(data.error || "Erreur lors de l'ajout.");
+                }
+            } else {
+                // ── SUPPRIMER des favoris ──
+                const res = await fetch("http://localhost:3000/api/favoris/supprimer", {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, id_lieu: hotel.id }),
+                });
+                const data = await res.json();
+
+                if (res.ok) {
+                    setEnregistre(false);
+                    setMsgFavori("🗑️ Retiré des favoris.");
+                } else {
+                    setMsgFavori(data.error || "Erreur lors de la suppression.");
+                }
+            }
+        } catch (err) {
+            setMsgFavori("❌ Erreur réseau.");
+        } finally {
+            setLoadingFavori(false);
+            setTimeout(() => setMsgFavori(""), 3000);
+        }
+    };
+    // ─────────────────────────────────────────────────────
 
     if (!hotel) {
         return (
@@ -107,7 +178,7 @@ function HotelDetails() {
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-end p-10">
                     <div>
-                        <span className="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">
+                        <span className="bg-sky-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">
                             {hotel.category}
                         </span>
                         <h1 className="text-white text-4xl font-bold">{hotel.title}</h1>
@@ -122,21 +193,30 @@ function HotelDetails() {
                 {/* Rating + Prix */}
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
-                        <span className="text-orange-400 text-xl">★</span>
+                        <span className="text-sky-400 text-xl">★</span>
                         <span className="font-bold text-gray-800 text-lg">{hotel.rating}</span>
                         <span className="text-gray-400 text-sm">/ 5</span>
                     </div>
                     <div className="text-right">
-                        <span className="text-2xl font-bold text-orange-500">{hotel.price}</span>
+                        <span className="text-2xl font-bold text-sky-500">{hotel.price}</span>
                     </div>
                 </div>
 
                 {/* Boutons */}
-                <div className="flex gap-4 mb-6">
-                    <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 text-black rounded-lg hover:bg-gray-100 transition">
-                        <FaHeart />
-                        Enregistrer
+                <div className="flex items-center gap-4 mb-2">
+                    <button
+                        onClick={handleEnregistrer}
+                        disabled={loadingFavori}
+                        className={`flex items-center gap-2 px-4 py-2 border rounded-lg transition font-medium
+                            ${enregistre
+                                ? "bg-sky-500 text-white border-sky-500 hover:bg-sky-600"
+                                : "border-gray-300 text-black hover:bg-gray-100"
+                            } ${loadingFavori ? "opacity-60 cursor-not-allowed" : ""}`}
+                    >
+                        <FaHeart className={enregistre ? "text-white" : "text-gray-500"} />
+                        {loadingFavori ? "..." : enregistre ? "Enregistré" : "Enregistrer"}
                     </button>
+
                     <button
                         onClick={() => setOpenAvis(true)}
                         className="flex items-center gap-2 px-4 py-2 border border-gray-300 text-black rounded-lg hover:bg-gray-100 transition"
@@ -146,8 +226,13 @@ function HotelDetails() {
                     </button>
                 </div>
 
+                {/* Message feedback favori */}
+                {msgFavori && (
+                    <p className="text-sm text-gray-600 mb-4 ml-1">{msgFavori}</p>
+                )}
+
                 {/* Description */}
-                <h2 className="text-2xl font-semibold mb-3">À propos de {hotel.title}</h2>
+                <h2 className="text-2xl font-semibold mb-3 mt-6">À propos de {hotel.title}</h2>
                 <p className="text-gray-700 leading-relaxed mb-8">{hotel.description}</p>
 
                 {/* Équipements + Réservation */}
@@ -157,7 +242,7 @@ function HotelDetails() {
                         <ul className="space-y-1">
                             {hotel.amenities.map((a, i) => (
                                 <li key={i} className="text-gray-600 text-sm flex items-center gap-2">
-                                    <span className="text-orange-400">✓</span> {a}
+                                    <span className="text-sky-400">✓</span> {a}
                                 </li>
                             ))}
                         </ul>
@@ -167,7 +252,7 @@ function HotelDetails() {
                         <p className="text-gray-500 text-sm mb-4">Meilleure période : toute l'année</p>
                         <button
                             onClick={() => setOpenReservation(true)}
-                            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition"
+                            className="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 rounded-lg transition"
                         >
                             Réserver maintenant
                         </button>
@@ -199,7 +284,7 @@ function HotelDetails() {
                                     <button
                                         key={n}
                                         onClick={() => setNote(n)}
-                                        className={`px-3 py-2 border rounded transition ${note === n ? "bg-orange-500 text-white border-orange-500" : "hover:bg-gray-100"}`}
+                                        className={`px-3 py-2 border rounded transition ${note === n ? "bg-sky-500 text-white border-sky-500" : "hover:bg-gray-100"}`}
                                     >
                                         {n} ⭐
                                     </button>

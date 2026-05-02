@@ -23,7 +23,7 @@ function Restaurants() {
             >
                 <div className="absolute inset-0 bg-black/55" />
                 <div className="relative z-10 px-10 pb-10">
-                    <p className="text-orange-400 font-semibold text-sm uppercase tracking-widest mb-2">
+                    <p className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-2">
                         Gastronomie
                     </p>
                     <h1 className="text-white text-4xl font-extrabold leading-tight">

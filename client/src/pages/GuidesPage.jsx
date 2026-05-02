@@ -90,7 +90,7 @@ const StarRow = ({ rating }) => (
         {[1, 2, 3, 4, 5].map((s) => (
             <svg
                 key={s}
-                className={`w-3.5 h-3.5 ${s <= Math.round(rating) ? "text-orange-400" : "text-gray-200"}`}
+                className={`w-3.5 h-3.5 ${s <= Math.round(rating) ? "text-sky-400" : "text-gray-200"}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
             >
@@ -104,7 +104,7 @@ const AvatarPlaceholder = ({ name, size = "lg" }) => {
     const initials = name.split(" ").map((n) => n[0]).slice(0, 2).join("");
     const sizeClasses = size === "lg" ? "w-20 h-20 text-2xl" : "w-12 h-12 text-base";
     const colors = [
-        "bg-orange-100 text-orange-600",
+        "bg-sky-100 text-sky-600",
         "bg-amber-100 text-amber-700",
         "bg-stone-100 text-stone-600",
         "bg-red-100 text-red-600",
@@ -193,7 +193,7 @@ function GuidesPage() {
 
                             {/* Specialty */}
                             <div className="mb-3">
-                                <span className="inline-block bg-orange-50 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full">
+                                <span className="inline-block bg-sky-50 text-sky-600 text-xs font-semibold px-3 py-1 rounded-full">
                                     {guide.specialty}
                                 </span>
                             </div>
@@ -225,7 +225,7 @@ function GuidesPage() {
                             {/* CTA */}
                             <button
                                 onClick={() => setSelectedGuide(guide)}
-                                className="mt-4 w-full bg-gray-900 hover:bg-orange-500 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200"
+                                className="mt-4 w-full bg-gray-900 hover:bg-sky-500 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200"
                             >
                                 Contacter ce guide
                             </button>
@@ -237,11 +237,11 @@ function GuidesPage() {
             {/* ── BECOME A GUIDE CTA ── */}
             <div className="max-w-6xl mx-auto px-6 pb-16">
                 <div className="relative bg-gray-900 rounded-3xl overflow-hidden p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                    <div className="absolute bottom-0 left-20 w-40 h-40 bg-orange-500/5 rounded-full translate-y-1/2 pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                    <div className="absolute bottom-0 left-20 w-40 h-40 bg-sky-500/5 rounded-full translate-y-1/2 pointer-events-none" />
 
                     <div className="relative z-10">
-                        <p className="text-orange-400 text-sm font-semibold uppercase tracking-widest mb-3">
+                        <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-3">
                             Rejoignez notre réseau
                         </p>
                         <h2 className="text-white text-3xl font-extrabold mb-3 leading-tight">
@@ -253,7 +253,7 @@ function GuidesPage() {
                         <div className="flex flex-wrap gap-4 mt-6">
                             {["Profil vérifié", "Paiements sécurisés", "Accompagnement", "Visibilité nationale"].map((f) => (
                                 <div key={f} className="flex items-center gap-2 text-gray-300 text-sm">
-                                    <span className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs">✓</span>
+                                    <span className="w-5 h-5 rounded-full bg-sky-500 flex items-center justify-center text-white text-xs">✓</span>
                                     {f}
                                 </div>
                             ))}
@@ -262,7 +262,7 @@ function GuidesPage() {
 
                     <button
                         onClick={() => setShowForm(true)}
-                        className="relative z-10 shrink-0 bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-4 rounded-2xl transition-colors text-base whitespace-nowrap shadow-xl shadow-orange-500/20"
+                        className="relative z-10 shrink-0 bg-sky-500 hover:bg-sky-400 text-white font-bold px-8 py-4 rounded-2xl transition-colors text-base whitespace-nowrap shadow-xl shadow-sky-500/20"
                     >
                         Devenir guide →
                     </button>
@@ -286,21 +286,21 @@ function GuidesPage() {
                         <div className="p-6 space-y-4">
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Votre nom</label>
-                                <input type="text" placeholder="Ex: Ahmed Benali" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                <input type="text" placeholder="Ex: Ahmed Benali" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Email ou téléphone</label>
-                                <input type="text" placeholder="contact@exemple.com" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                <input type="text" placeholder="contact@exemple.com" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Date souhaitée</label>
-                                <input type="date" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                <input type="date" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Votre message</label>
-                                <textarea rows={3} placeholder="Décrivez votre projet de voyage..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors resize-none"></textarea>
+                                <textarea rows={3} placeholder="Décrivez votre projet de voyage..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors resize-none"></textarea>
                             </div>
-                            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors">
+                            <button className="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 rounded-xl transition-colors">
                                 Envoyer la demande
                             </button>
                         </div>
@@ -323,20 +323,20 @@ function GuidesPage() {
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1">Prénom</label>
-                                    <input type="text" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                    <input type="text" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1">Nom</label>
-                                    <input type="text" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                    <input type="text" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                                 </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Wilaya / Région</label>
-                                <input type="text" placeholder="Ex: Béjaïa, Tamanrasset..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                <input type="text" placeholder="Ex: Béjaïa, Tamanrasset..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Spécialité</label>
-                                <select className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors bg-white">
+                                <select className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors bg-white">
                                     <option value="">Choisissez votre domaine</option>
                                     <option>Nature & Randonnée</option>
                                     <option>Histoire & Patrimoine</option>
@@ -351,7 +351,7 @@ function GuidesPage() {
                                 <div className="flex flex-wrap gap-2">
                                     {["Arabe", "Français", "Anglais", "Kabyle", "Tamazight", "Espagnol"].map((lang) => (
                                         <label key={lang} className="flex items-center gap-1.5 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" className="accent-orange-500" />
+                                            <input type="checkbox" className="accent-sky-500" />
                                             {lang}
                                         </label>
                                     ))}
@@ -359,13 +359,13 @@ function GuidesPage() {
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Parlez-nous de vous</label>
-                                <textarea rows={3} placeholder="Votre expérience, vos passions, ce que vous souhaitez partager..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors resize-none"></textarea>
+                                <textarea rows={3} placeholder="Votre expérience, vos passions, ce que vous souhaitez partager..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors resize-none"></textarea>
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
-                                <input type="email" placeholder="votre@email.com" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-orange-400 transition-colors" />
+                                <input type="email" placeholder="votre@email.com" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-sky-400 transition-colors" />
                             </div>
-                            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors">
+                            <button className="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 rounded-xl transition-colors">
                                 Soumettre ma candidature
                             </button>
                         </div>

@@ -19,11 +19,8 @@ const Navbar = ({ transparent = true }) => {
         <nav className={`absolute top-0 left-0 w-full z-50 flex items-center justify-between px-10 py-5 ${!transparent ? "bg-white shadow-md" : ""}`}>
             {/* Logo */}
             <Link to="/" className="flex items-center">
-                <span className="text-orange-500 font-extrabold text-3xl tracking-tight leading-none">
-                    RIHLA
-                </span>
-                <span className="text-orange-500 font-extrabold text-3xl leading-none">.dz</span>
-            </Link>
+    <img src="/images/logo.png" alt="Rihla.dz" className="h-20" />
+</Link>
 
             {/* Nav Links */}
             <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
@@ -31,8 +28,8 @@ const Navbar = ({ transparent = true }) => {
                                    to="/destinations"
                                    className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
                                        location.pathname === "/destinations"
-                                           ? "text-orange-400"
-                                           : "text-orange-400 hover:text-orange-400"
+                                           ? "text-sky-400"
+                                           : "text-sky-400 hover:text-sky-400"
                                    }`}
                                >
                                    Lieux
@@ -41,8 +38,8 @@ const Navbar = ({ transparent = true }) => {
                     to="/hotels"
                     className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
                         location.pathname === "/hotels"
-                            ? "text-orange-400"
-                            : "text-orange-400 hover:text-orange-400"
+                            ? "text-sky-400"
+                            : "text-sky-400 hover:text-sky-400"
                     }`}
                 >
                     Hôtels
@@ -51,8 +48,8 @@ const Navbar = ({ transparent = true }) => {
                     to="/restaurants"
                     className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
                         location.pathname === "/restaurants"
-                            ? "text-orange-400"
-                            : "text-orange-400 hover:text-orange-400"
+                            ? "text-sky-400"
+                            : "text-sky-400 hover:text-sky-400"
                     }`}
                 >
                     Restaurant
@@ -61,8 +58,8 @@ const Navbar = ({ transparent = true }) => {
                     to="/guides"
                     className={`font-medium transition-colors bg-transparent border-none cursor-pointer ${
                         location.pathname === "/guides"
-                            ? "text-orange-400"
-                            : "text-orange-400 hover:text-orange-400"
+                            ? "text-sky-400"
+                            : "text-sky-400 hover:text-sky-400"
                     }`}
                 >
                     Guides
@@ -74,7 +71,7 @@ const Navbar = ({ transparent = true }) => {
                 {/* Contribuer dans les liens */}
                 <Link
                     to="/contribuer"
-                    className="flex items-center gap-1.5 text-orange-400 font-semibold hover:text-orange-500 transition-colors"
+                    className="flex items-center gap-1.5 text-sky-400 font-semibold hover:text-sky-500 transition-colors"
                 >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -89,13 +86,13 @@ const Navbar = ({ transparent = true }) => {
                     <>
                         <Link
                             to="/login"
-                            className={`font-medium hover:text-orange-400 px-4 py-2 ${transparent ? "text-white" : "text-gray-700"}`}
+                            className={`font-medium hover:text-sky-400 px-4 py-2 ${transparent ? "text-white" : "text-gray-700"}`}
                         >
                             Se connecter
                         </Link>
                         <Link
                             to="/register"
-                            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-full"
+                            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-full"
                         >
                             S'inscrire
                         </Link>
@@ -103,7 +100,7 @@ const Navbar = ({ transparent = true }) => {
                 ) : (
                     <>
                         <Link to="/profile" className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold">
+                            <div className="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold">
                                 {user.name[0]}
                             </div>
                             <span className={`${transparent ? "text-white" : "text-gray-700"}`}>

@@ -111,7 +111,7 @@ function RestaurantDetails() {
                 <img src={restaurant.image} alt={restaurant.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/40 flex items-end p-10">
                     <div>
-                        <span className="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">
+                        <span className="bg-sky-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">
                             {restaurant.category}
                         </span>
                         <h1 className="text-white text-4xl font-bold">{restaurant.title}</h1>
@@ -126,7 +126,7 @@ function RestaurantDetails() {
                 {/* Rating */}
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
-                        <span className="text-orange-400 text-xl">★</span>
+                        <span className="text-sky-400 text-xl">★</span>
                         <span className="font-bold text-gray-800 text-lg">{restaurant.rating}</span>
                         <span className="text-gray-400 text-sm">/ 5</span>
                     </div>
@@ -161,7 +161,7 @@ function RestaurantDetails() {
                         <ul className="space-y-1">
                             {restaurant.specialites.map((s, i) => (
                                 <li key={i} className="text-gray-600 text-sm flex items-center gap-2">
-                                    <span className="text-orange-400">🍽️</span> {s}
+                                    <span className="text-sky-400">🍽️</span> {s}
                                 </li>
                             ))}
                         </ul>
@@ -193,7 +193,7 @@ function RestaurantDetails() {
                                     <button
                                         key={n}
                                         onClick={() => setNote(n)}
-                                        className={`px-3 py-2 border rounded transition ${note === n ? "bg-orange-500 text-white border-orange-500" : "hover:bg-gray-100"}`}
+                                        className={`px-3 py-2 border rounded transition ${note === n ? "bg-sky-500 text-white border-sky-500" : "hover:bg-gray-100"}`}
                                     >
                                         {n} ⭐
                                     </button>

@@ -14,7 +14,7 @@ function SearchBar() {
                 className="flex-1 px-4 py-3 outline-none text-sm border-l"
             />
 
-            <button className="bg-orange-500 px-5 py-3 text-white hover:bg-orange-600 transition">
+            <button className="bg-sky-500 px-5 py-3 text-white hover:bg-sky-600 transition">
                 🔍
             </button>
         </div>

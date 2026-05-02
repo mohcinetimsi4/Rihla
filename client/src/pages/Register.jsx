@@ -137,7 +137,7 @@ const Register = () => {
                         "Avis authentiques de la communauté",
                     ].map((feat) => (
                         <li key={feat} className="flex items-center gap-3">
-                            <span className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center shrink-0 text-white">
+                            <span className="w-5 h-5 rounded-full bg-sky-500 flex items-center justify-center shrink-0 text-white">
                                 <CheckIcon />
                             </span>
                             <span className="text-white/85">{feat}</span>
@@ -151,10 +151,10 @@ const Register = () => {
                 {/* Top nav (mobile) */}
                 <div className="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100 lg:hidden">
                     <Link to="/" className="flex items-center">
-                        <span className="text-orange-500 font-extrabold text-2xl tracking-tight leading-none">RIHLA</span>
-                        <span className="text-orange-500 font-extrabold text-2xl leading-none">.dz</span>
+                        <span className="text-sky-500 font-extrabold text-2xl tracking-tight leading-none">RIHLA</span>
+                        <span className="text-sky-500 font-extrabold text-2xl leading-none">.dz</span>
                     </Link>
-                    <Link to="/login" className="text-sm text-orange-500 font-semibold hover:underline">
+                    <Link to="/login" className="text-sm text-sky-500 font-semibold hover:underline">
                         Se connecter →
                     </Link>
                 </div>
@@ -165,8 +165,8 @@ const Register = () => {
                         {submitted ? (
                             /* ── Success State ── */
                             <div className="text-center">
-                                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
@@ -179,7 +179,7 @@ const Register = () => {
                                 </p>
                                 <Link
                                     to="/login"
-                                    className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                                    className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                                 >
                                     Se connecter maintenant →
                                 </Link>
@@ -191,7 +191,7 @@ const Register = () => {
                                     <h1 className="text-3xl font-extrabold text-gray-900 mb-1">Créer un compte &nbsp; ✨</h1>
                                     <p className="text-gray-500 text-sm">
                                         Déjà inscrit ?{" "}
-                                        <Link to="/login" className="text-orange-500 font-semibold hover:underline">
+                                        <Link to="/login" className="text-sky-500 font-semibold hover:underline">
                                             Se connecter
                                         </Link>
                                     </p>
@@ -311,15 +311,15 @@ const Register = () => {
                                                 type="checkbox"
                                                 checked={terms}
                                                 onChange={(e) => setTerms(e.target.checked)}
-                                                className="w-4 h-4 accent-orange-500 cursor-pointer mt-0.5 shrink-0"
+                                                className="w-4 h-4 accent-sky-500 cursor-pointer mt-0.5 shrink-0"
                                             />
                                             <span className="text-sm text-gray-600 leading-relaxed">
                                                 J'accepte les{" "}
-                                                <a href="#" className="text-orange-500 font-medium hover:underline">
+                                                <a href="#" className="text-sky-500 font-medium hover:underline">
                                                     Conditions d'utilisation
                                                 </a>{" "}
                                                 et la{" "}
-                                                <a href="#" className="text-orange-500 font-medium hover:underline">
+                                                <a href="#" className="text-sky-500 font-medium hover:underline">
                                                     Politique de confidentialité
                                                 </a>{" "}
                                                 de Rihla.dz
@@ -333,7 +333,7 @@ const Register = () => {
                                     {/* Submit */}
                                     <button
                                         type="submit"
-                                        className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-3 rounded-xl transition-colors shadow-sm mt-1"
+                                        className="w-full bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white font-semibold py-3 rounded-xl transition-colors shadow-sm mt-1"
                                     >
                                         Créer mon compte
                                     </button>

@@ -67,7 +67,7 @@ const places = [
 ];
 
 const StarIcon = ({ filled = true }) => (<svg
-    className={`w-4 h-4 ${filled ? "text-orange-400" : "text-gray-300"}`}
+    className={`w-4 h-4 ${filled ? "text-sky-400" : "text-gray-300"}`}
     fill="currentColor"
     viewBox="0 0 20 20"
 >
@@ -98,8 +98,8 @@ const PlacesSection = () => {
                         key={cat}
                         onClick={() => setActiveCategory(cat)}
                         className={`px-6 py-2 rounded-full border font-medium text-sm transition-colors ${activeCategory === cat
-                            ? "bg-orange-500 text-white border-orange-500"
-                            : "bg-white text-gray-700 border-gray-300 hover:border-orange-400 hover:text-orange-500"
+                            ? "bg-sky-500 text-white border-sky-500"
+                            : "bg-white text-gray-700 border-gray-300 hover:border-sky-400 hover:text-sky-500"
                             }`}
                     >
                         {cat}
@@ -144,7 +144,7 @@ const PlacesSection = () => {
             {/* Description */}
             <p className="text-gray-500 text-xs leading-relaxed">
                 {place.description}{" "}
-                <span className="text-orange-500 font-medium hover:underline">
+                <span className="text-sky-500 font-medium hover:underline">
                     En savoir plus
                 </span>
             </p>
@@ -155,7 +155,7 @@ const PlacesSection = () => {
             <div className="flex items-center justify-between mt-6">
                 <button
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                    className="text-sm text-gray-600 border border-gray-300 px-4 py-2 rounded-lg hover:border-orange-400 hover:text-orange-500 transition-colors"
+                    className="text-sm text-gray-600 border border-gray-300 px-4 py-2 rounded-lg hover:border-sky-400 hover:text-sky-500 transition-colors"
                 >
                     page précédente
                 </button>
@@ -166,10 +166,10 @@ const PlacesSection = () => {
                             key={i}
                             onClick={() => typeof page === "number" && setCurrentPage(page)}
                             className={`w-9 h-9 rounded-full text-sm font-medium transition-colors ${page === currentPage
-                                ? "bg-orange-500 text-white"
+                                ? "bg-sky-500 text-white"
                                 : page === "..."
                                     ? "text-gray-400 cursor-default"
-                                    : "text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                                    : "text-gray-700 hover:bg-sky-50 hover:text-sky-500"
                                 }`}
                         >
                             {page}
@@ -179,7 +179,7 @@ const PlacesSection = () => {
 
                 <button
                     onClick={() => setCurrentPage((p) => Math.min(5, p + 1))}
-                    className="text-sm text-gray-600 border border-gray-300 px-4 py-2 rounded-lg hover:border-orange-400 hover:text-orange-500 transition-colors"
+                    className="text-sm text-gray-600 border border-gray-300 px-4 py-2 rounded-lg hover:border-sky-400 hover:text-sky-500 transition-colors"
                 >
                     Page suivante
                 </button>

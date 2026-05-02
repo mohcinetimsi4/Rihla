@@ -11,16 +11,16 @@ const Footer = () => {
 
                 {/* Links */}
                 <nav className="flex flex-wrap items-center justify-center gap-6">
-                    <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
+                    <a href="#" className="text-gray-600 hover:text-sky-500 text-sm transition-colors">
                         Accueil
                     </a>
-                    <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
+                    <a href="#" className="text-gray-600 hover:text-sky-500 text-sm transition-colors">
                         Favoris
                     </a>
-                    <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
+                    <a href="#" className="text-gray-600 hover:text-sky-500 text-sm transition-colors">
                         Contacter nous
                     </a>
-                    <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
+                    <a href="#" className="text-gray-600 hover:text-sky-500 text-sm transition-colors">
                         À propos de nous
                     </a>
                 </nav>
@@ -28,7 +28,7 @@ const Footer = () => {
                 {/* CTA Button */}
                 <a
                     href="#"
-                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors whitespace-nowrap"
+                    className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors whitespace-nowrap"
                 >
                     Explorer nos destinations
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ const Footer = () => {
                         {/* Facebook */}
                         <a
                             href="#"
-                            className="w-9 h-9 rounded-full bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center transition-colors"
+                            className="w-9 h-9 rounded-full bg-sky-500 hover:bg-sky-600 text-white flex items-center justify-center transition-colors"
                         >
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
@@ -61,7 +61,7 @@ const Footer = () => {
                         {/* Instagram */}
                         <a
                             href="#"
-                            className="w-9 h-9 rounded-full bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center transition-colors"
+                            className="w-9 h-9 rounded-full bg-sky-500 hover:bg-sky-600 text-white flex items-center justify-center transition-colors"
                         >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />

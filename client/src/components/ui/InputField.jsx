@@ -38,7 +38,7 @@ const InputField = ({
             <div
                 className={`flex items-center gap-2 border rounded-xl px-3 py-2.5 bg-white transition-colors ${error
                         ? "border-red-400 focus-within:border-red-500"
-                        : "border-gray-200 focus-within:border-orange-400"
+                        : "border-gray-200 focus-within:border-sky-400"
                     }`}
             >
                 {icon && <span className="text-gray-400 shrink-0">{icon}</span>}

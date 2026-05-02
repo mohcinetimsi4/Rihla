@@ -36,9 +36,9 @@ const StepIndicator = ({ currentStep }) => (
                     <div className="flex flex-col items-center gap-1.5">
                         <div
                             className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${isDone
-                                ? "bg-orange-500 text-white shadow-md shadow-orange-200"
+                                ? "bg-sky-500 text-white shadow-md shadow-sky-200"
                                 : isActive
-                                    ? "bg-orange-500 text-white shadow-lg shadow-orange-300 scale-110"
+                                    ? "bg-sky-500 text-white shadow-lg shadow-sky-300 scale-110"
                                     : "bg-gray-100 text-gray-400 border border-gray-200"
                                 }`}
                         >
@@ -50,12 +50,12 @@ const StepIndicator = ({ currentStep }) => (
                                 stepNum
                             )}
                         </div>
-                        <span className={`text-xs font-medium hidden sm:block ${isActive ? "text-orange-500" : isDone ? "text-gray-500" : "text-gray-400"}`}>
+                        <span className={`text-xs font-medium hidden sm:block ${isActive ? "text-sky-500" : isDone ? "text-gray-500" : "text-gray-400"}`}>
                             {step}
                         </span>
                     </div>
                     {idx < steps.length - 1 && (
-                        <div className={`h-0.5 w-12 sm:w-20 mx-1 sm:mx-2 mb-4 transition-all duration-300 ${isDone ? "bg-orange-400" : "bg-gray-200"}`} />
+                        <div className={`h-0.5 w-12 sm:w-20 mx-1 sm:mx-2 mb-4 transition-all duration-300 ${isDone ? "bg-sky-400" : "bg-gray-200"}`} />
                     )}
                 </div>
             );
@@ -68,20 +68,20 @@ const Step1 = ({ data, onChange }) => (
     <div className="space-y-6">
         <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Nom du lieu <span className="text-orange-500">*</span>
+                Nom du lieu <span className="text-sky-500">*</span>
             </label>
             <input
                 type="text"
                 placeholder="Ex : Cascade de Kherrata"
                 value={data.name}
                 onChange={(e) => onChange("name", e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm transition"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm transition"
             />
         </div>
 
         <div>
             <label className="block text-sm font-semibold text-gray-700 mb-3">
-                Catégorie <span className="text-orange-500">*</span>
+                Catégorie <span className="text-sky-500">*</span>
             </label>
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
                 {categories.map((cat) => (
@@ -90,8 +90,8 @@ const Step1 = ({ data, onChange }) => (
                         type="button"
                         onClick={() => onChange("category", cat.id)}
                         className={`flex flex-col items-center gap-1.5 py-3 px-2 rounded-xl border-2 transition-all duration-200 ${data.category === cat.id
-                            ? "border-orange-500 bg-orange-50 text-orange-600"
-                            : "border-gray-200 bg-white text-gray-500 hover:border-orange-300 hover:bg-orange-50"
+                            ? "border-sky-500 bg-sky-50 text-sky-600"
+                            : "border-gray-200 bg-white text-gray-500 hover:border-sky-300 hover:bg-sky-50"
                             }`}
                     >
                         <span className="text-2xl">{cat.emoji}</span>
@@ -103,14 +103,14 @@ const Step1 = ({ data, onChange }) => (
 
         <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Description courte <span className="text-orange-500">*</span>
+                Description courte <span className="text-sky-500">*</span>
             </label>
             <textarea
                 rows={4}
                 placeholder="Décrivez ce lieu en quelques phrases. Qu'est-ce qui le rend unique ?"
                 value={data.description}
                 onChange={(e) => onChange("description", e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm resize-none transition"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm resize-none transition"
             />
             <p className="text-right text-xs text-gray-400 mt-1">{data.description.length}/500</p>
         </div>
@@ -251,13 +251,13 @@ const Step2 = ({ data, onChange }) => {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                        className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm transition"
+                        className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm transition"
                     />
                     <button
                         type="button"
                         onClick={handleSearch}
                         disabled={searching}
-                        className="px-5 py-3 bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white rounded-xl text-sm font-semibold transition-colors flex items-center gap-2"
+                        className="px-5 py-3 bg-sky-500 hover:bg-sky-600 disabled:opacity-60 text-white rounded-xl text-sm font-semibold transition-colors flex items-center gap-2"
                     >
                         {searching ? (
                             <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
@@ -283,12 +283,12 @@ const Step2 = ({ data, onChange }) => {
 
             {/* Coordinates badge */}
             {data.lat && data.lng && (
-                <div className="flex items-center gap-2 bg-orange-50 border border-orange-100 rounded-xl px-4 py-3">
-                    <svg className="w-4 h-4 text-orange-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <div className="flex items-center gap-2 bg-sky-50 border border-sky-100 rounded-xl px-4 py-3">
+                    <svg className="w-4 h-4 text-sky-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-xs text-orange-700 font-medium">
+                    <span className="text-xs text-sky-700 font-medium">
                         Coordonnées : {parseFloat(data.lat).toFixed(4)}° N, {parseFloat(data.lng).toFixed(4)}° E
                     </span>
                 </div>
@@ -298,13 +298,13 @@ const Step2 = ({ data, onChange }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Wilaya <span className="text-orange-500">*</span>
+                        Wilaya <span className="text-sky-500">*</span>
                     </label>
                     <div className="relative">
                         <select
                             value={data.wilaya}
                             onChange={(e) => onChange("wilaya", e.target.value)}
-                            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-800 text-sm appearance-none bg-white transition cursor-pointer"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent text-gray-800 text-sm appearance-none bg-white transition cursor-pointer"
                         >
                             <option value="">Sélectionner une wilaya…</option>
                             {wilayas.map((w) => (
@@ -324,7 +324,7 @@ const Step2 = ({ data, onChange }) => {
                         placeholder="Auto-rempli depuis la carte"
                         value={data.address}
                         onChange={(e) => onChange("address", e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm transition"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm transition"
                     />
                 </div>
             </div>
@@ -371,7 +371,7 @@ const Step3 = ({ data, onChange }) => {
                     onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
                     onDragLeave={() => setDragging(false)}
                     onDrop={handleDrop}
-                    className={`relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-200 ${dragging ? "border-orange-400 bg-orange-50" : "border-gray-200 bg-gray-50 hover:border-orange-300 hover:bg-orange-50"
+                    className={`relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-200 ${dragging ? "border-sky-400 bg-sky-50" : "border-gray-200 bg-gray-50 hover:border-sky-300 hover:bg-sky-50"
                         }`}
                 >
                     <input
@@ -382,14 +382,14 @@ const Step3 = ({ data, onChange }) => {
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     />
                     <div className="flex flex-col items-center gap-3">
-                        <div className="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center">
-                            <svg className="w-7 h-7 text-orange-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                        <div className="w-14 h-14 rounded-full bg-sky-100 flex items-center justify-center">
+                            <svg className="w-7 h-7 text-sky-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
                             </svg>
                         </div>
                         <div>
                             <p className="text-sm font-semibold text-gray-700">Glissez vos photos ici</p>
-                            <p className="text-xs text-gray-400 mt-1">ou <span className="text-orange-500 font-medium">parcourez vos fichiers</span></p>
+                            <p className="text-xs text-gray-400 mt-1">ou <span className="text-sky-500 font-medium">parcourez vos fichiers</span></p>
                         </div>
                         <p className="text-xs text-gray-400">PNG, JPG, WEBP – max 10 Mo par photo</p>
                     </div>
@@ -412,7 +412,7 @@ const Step3 = ({ data, onChange }) => {
                                     </button>
                                 </div>
                                 {idx === 0 && (
-                                    <span className="absolute top-1.5 left-1.5 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                                    <span className="absolute top-1.5 left-1.5 bg-sky-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
                                         Principale
                                     </span>
                                 )}
@@ -432,8 +432,8 @@ const Step3 = ({ data, onChange }) => {
                             type="button"
                             onClick={() => onChange("hours", h)}
                             className={`py-2.5 px-3 rounded-xl border text-sm font-medium transition-all ${data.hours === h
-                                ? "border-orange-500 bg-orange-50 text-orange-600"
-                                : "border-gray-200 bg-white text-gray-500 hover:border-orange-300"
+                                ? "border-sky-500 bg-sky-50 text-sky-600"
+                                : "border-gray-200 bg-white text-gray-500 hover:border-sky-300"
                                 }`}
                         >
                             {h}
@@ -477,7 +477,7 @@ const Step3 = ({ data, onChange }) => {
                     placeholder="Ex : Apportez de l'eau, les weekends sont très fréquentés…"
                     value={data.tips}
                     onChange={(e) => onChange("tips", e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm resize-none transition"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent text-gray-800 placeholder-gray-400 text-sm resize-none transition"
                 />
             </div>
         </div>
@@ -492,15 +492,15 @@ const Step4 = ({ data }) => {
 
     return (
         <div className="space-y-6">
-            <div className="bg-orange-50 border border-orange-200 rounded-2xl p-5 flex gap-4 items-start">
-                <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-5 flex gap-4 items-start">
+                <div className="w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </div>
                 <div>
-                    <p className="text-sm font-semibold text-orange-700">Vérifiez vos informations avant d'envoyer</p>
-                    <p className="text-xs text-orange-600 mt-1">Votre proposition sera examinée par notre équipe dans les plus courts délais. Merci d'avoir contribuer à Rihla.dz ! 🇩🇿</p>
+                    <p className="text-sm font-semibold text-sky-700">Vérifiez vos informations avant d'envoyer</p>
+                    <p className="text-xs text-sky-600 mt-1">Votre proposition sera examinée par notre équipe dans les plus courts délais. Merci d'avoir contribuer à Rihla.dz ! 🇩🇿</p>
                 </div>
             </div>
 
@@ -511,7 +511,7 @@ const Step4 = ({ data }) => {
                     </div>
                 )}
                 {(!data.photos || data.photos.length === 0) && (
-                    <div className="h-44 bg-gradient-to-br from-orange-100 to-amber-50 flex items-center justify-center">
+                    <div className="h-44 bg-gradient-to-br from-sky-100 to-amber-50 flex items-center justify-center">
                         <span className="text-5xl">{cat?.emoji || "📍"}</span>
                     </div>
                 )}
@@ -522,7 +522,7 @@ const Step4 = ({ data }) => {
                         <div>
                             <h3 className="font-bold text-gray-900 text-lg">{data.name || <span className="text-gray-400 font-normal italic">Nom non renseigné</span>}</h3>
                             {cat && (
-                                <span className="inline-flex items-center gap-1.5 mt-1 text-xs font-medium text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
+                                <span className="inline-flex items-center gap-1.5 mt-1 text-xs font-medium text-sky-600 bg-sky-50 px-3 py-1 rounded-full">
                                     {cat.emoji} {cat.label}
                                 </span>
                             )}
@@ -542,7 +542,7 @@ const Step4 = ({ data }) => {
                     {/* Location */}
                     {(data.wilaya || data.address) && (
                         <div className="flex items-center gap-2 text-sm text-gray-500">
-                            <svg className="w-4 h-4 text-orange-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-sky-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
@@ -553,7 +553,7 @@ const Step4 = ({ data }) => {
                     {/* Hours */}
                     {data.hours && (
                         <div className="flex items-center gap-2 text-sm text-gray-500">
-                            <svg className="w-4 h-4 text-orange-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-sky-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10" /><path strokeLinecap="round" d="M12 6v6l4 2" />
                             </svg>
                             <span>{data.hours}</span>
@@ -582,8 +582,8 @@ const Step4 = ({ data }) => {
 const SuccessScreen = ({ onReset }) => (
     <div className="flex flex-col items-center justify-center py-16 text-center gap-6">
         <div className="relative">
-            <div className="w-24 h-24 rounded-full bg-orange-100 flex items-center justify-center animate-bounce">
-                <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <div className="w-24 h-24 rounded-full bg-sky-100 flex items-center justify-center animate-bounce">
+                <svg className="w-12 h-12 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
             </div>
@@ -598,11 +598,11 @@ const SuccessScreen = ({ onReset }) => (
         <div className="flex flex-col sm:flex-row gap-3">
             <button
                 onClick={onReset}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
+                className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
             >
                 Proposer un autre lieu
             </button>
-            <button className="border border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-500 font-medium px-6 py-3 rounded-full transition-colors text-sm">
+            <button className="border border-gray-200 text-gray-600 hover:border-sky-300 hover:text-sky-500 font-medium px-6 py-3 rounded-full transition-colors text-sm">
                 Explorer les destinations
             </button>
         </div>
@@ -654,7 +654,7 @@ const Contribuer = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero banner */}
-            <div className="bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-sky-500 via-sky-400 to-amber-400 relative overflow-hidden">
                 {/* Floating back button */}
                 <button
                     onClick={() => window.history.back()}
@@ -743,7 +743,7 @@ const Contribuer = () => {
                                         disabled={step === 1}
                                         className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border transition-all ${step === 1
                                             ? "border-gray-100 text-gray-300 cursor-not-allowed"
-                                            : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-500"
+                                            : "border-gray-200 text-gray-600 hover:border-sky-300 hover:text-sky-500"
                                             }`}
                                     >
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -756,7 +756,7 @@ const Contribuer = () => {
                                         {[1, 2, 3, 4].map((s) => (
                                             <div
                                                 key={s}
-                                                className={`rounded-full transition-all duration-300 ${s === step ? "w-6 h-2 bg-orange-500" : s < step ? "w-2 h-2 bg-orange-300" : "w-2 h-2 bg-gray-200"
+                                                className={`rounded-full transition-all duration-300 ${s === step ? "w-6 h-2 bg-sky-500" : s < step ? "w-2 h-2 bg-sky-300" : "w-2 h-2 bg-gray-200"
                                                     }`}
                                             />
                                         ))}
@@ -766,7 +766,7 @@ const Contribuer = () => {
                                         onClick={handleNext}
                                         disabled={!canProceed()}
                                         className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${canProceed()
-                                            ? "bg-orange-500 hover:bg-orange-600 text-white shadow-md shadow-orange-200"
+                                            ? "bg-sky-500 hover:bg-sky-600 text-white shadow-md shadow-sky-200"
                                             : "bg-gray-100 text-gray-400 cursor-not-allowed"
                                             }`}
                                     >
@@ -792,7 +792,7 @@ const Contribuer = () => {
                 {!submitted && (
                     <div className="mt-6 bg-white rounded-2xl border border-gray-100 p-6">
                         <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-xs">💡</span>
+                            <span className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center text-xs">💡</span>
                             Conseils pour une bonne contribution
                         </h3>
                         <ul className="space-y-3">

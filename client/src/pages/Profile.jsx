@@ -83,7 +83,7 @@ const Profile = () => {
     ];
 
     const inputClass =
-        "w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all bg-white";
+        "w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition-all bg-white";
     const disabledInputClass =
         "w-full border border-gray-100 rounded-xl px-4 py-3 text-sm text-gray-500 bg-gray-50 cursor-default";
 
@@ -126,7 +126,7 @@ const Profile = () => {
                                     className="w-full h-full object-cover"
                                 />
                             ) : (
-                                <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                                <div className="w-full h-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center">
                                     <span className="text-white font-extrabold text-4xl tracking-wide">
                                         {initials}
                                     </span>
@@ -175,7 +175,7 @@ const Profile = () => {
                         {!editing ? (
                             <button
                                 onClick={handleEdit}
-                                className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm shadow-sm"
+                                className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm shadow-sm"
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -192,7 +192,7 @@ const Profile = () => {
                                 </button>
                                 <button
                                     onClick={handleSave}
-                                    className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm shadow-sm"
+                                    className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm shadow-sm"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -217,7 +217,7 @@ const Profile = () => {
                 {/* Stats Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
                     {stats.map((stat) => (
-                        <div key={stat.label} className="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 flex flex-col items-center text-center hover:border-orange-200 transition-colors">
+                        <div key={stat.label} className="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 flex flex-col items-center text-center hover:border-sky-200 transition-colors">
                             <span className="text-2xl mb-1">{stat.icon}</span>
                             <span className="text-2xl font-extrabold text-gray-900">{stat.value}</span>
                             <span className="text-xs text-gray-400 mt-0.5 font-medium">{stat.label}</span>
@@ -232,7 +232,7 @@ const Profile = () => {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${activeTab === tab.id
-                                ? "bg-white text-orange-500 shadow-sm"
+                                ? "bg-white text-sky-500 shadow-sm"
                                 : "text-gray-500 hover:text-gray-700"
                                 }`}
                         >
@@ -255,8 +255,8 @@ const Profile = () => {
                                 {/* Section: Informations personnelles */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         </div>
@@ -353,8 +353,8 @@ const Profile = () => {
                                 {/* Section: Contact */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                             </svg>
                                         </div>
@@ -429,8 +429,8 @@ const Profile = () => {
                                 {/* Section: Biographie */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
                                         </div>
@@ -474,7 +474,7 @@ const Profile = () => {
                                 {/* Langue préférée */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
                                             <span className="text-lg">🌐</span>
                                         </div>
                                         <div>
@@ -506,7 +506,7 @@ const Profile = () => {
                                 {/* Préférences de voyage */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
                                             <span className="text-lg">🧭</span>
                                         </div>
                                         <div>
@@ -518,7 +518,7 @@ const Profile = () => {
                                         {["Nature 🏔️", "Plages 🏖️", "Histoire 🏛️", "Désert 🌵", "Villes 🏙️"].map((pref) => (
                                             <span
                                                 key={pref}
-                                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-orange-50 text-orange-600 border border-orange-100"
+                                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-sky-50 text-sky-600 border border-sky-100"
                                             >
                                                 {pref}
                                             </span>
@@ -529,8 +529,8 @@ const Profile = () => {
                                 {/* Compte */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                             </svg>
                                         </div>
@@ -553,7 +553,7 @@ const Profile = () => {
                                         </div>
                                         <div className="flex justify-between items-center py-2">
                                             <span className="text-gray-500 font-medium">Type</span>
-                                            <span className="bg-orange-100 text-orange-600 text-xs font-bold px-2.5 py-1 rounded-full">
+                                            <span className="bg-sky-100 text-sky-600 text-xs font-bold px-2.5 py-1 rounded-full">
                                                 Voyageur
                                             </span>
                                         </div>
@@ -570,8 +570,8 @@ const Profile = () => {
                             <div className="lg:col-span-2">
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                         </div>
@@ -584,7 +584,7 @@ const Profile = () => {
                                     <div className="space-y-1">
                                         {recentActivity.map((item, idx) => (
                                             <div key={idx} className="flex items-start gap-4 py-4 border-b border-gray-50 last:border-0">
-                                                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-lg flex-shrink-0">
+                                                <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-lg flex-shrink-0">
                                                     {item.icon}
                                                 </div>
                                                 <div className="flex-1">
@@ -607,7 +607,7 @@ const Profile = () => {
                                                     <span>{stat.icon}</span>
                                                     {stat.label}
                                                 </span>
-                                                <span className="text-lg font-extrabold text-orange-500">{stat.value}</span>
+                                                <span className="text-lg font-extrabold text-sky-500">{stat.value}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -624,8 +624,8 @@ const Profile = () => {
                                 {/* Change password */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                             </svg>
                                         </div>
@@ -666,7 +666,7 @@ const Profile = () => {
                                                 placeholder="••••••••"
                                             />
                                         </div>
-                                        <button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm mt-2">
+                                        <button className="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm mt-2">
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                             </svg>
@@ -704,7 +704,7 @@ const Profile = () => {
                                 {/* Security tips */}
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                                     <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-xl bg-sky-50 flex items-center justify-center">
                                             <span className="text-lg">🛡️</span>
                                         </div>
                                         <h2 className="font-bold text-gray-900 text-base">Conseils de sécurité</h2>
@@ -716,7 +716,7 @@ const Profile = () => {
                                             "Ne partagez jamais votre mot de passe",
                                         ].map((tip, i) => (
                                             <li key={i} className="flex items-start gap-2">
-                                                <svg className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                                                <svg className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                                 </svg>
                                                 {tip}

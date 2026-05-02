@@ -65,7 +65,7 @@ const Hero = () => {
 
                         {/* Search button — inset so it stays inside the pill */}
                         <div className="pr-1.5 py-1.5 shrink-0">
-                            <button className="bg-orange-500 hover:bg-orange-600 transition-colors text-white w-11 h-11 rounded-full flex items-center justify-center">
+                            <button className="bg-sky-500 hover:bg-sky-600 transition-colors text-white w-11 h-11 rounded-full flex items-center justify-center">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
@@ -111,7 +111,7 @@ const Hero = () => {
                         </div>
 
                         {/* Full-width search button */}
-                        <button className="bg-orange-500 hover:bg-orange-600 transition-colors text-white py-3.5 flex items-center justify-center gap-2 font-semibold text-sm">
+                        <button className="bg-sky-500 hover:bg-sky-600 transition-colors text-white py-3.5 flex items-center justify-center gap-2 font-semibold text-sm">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
