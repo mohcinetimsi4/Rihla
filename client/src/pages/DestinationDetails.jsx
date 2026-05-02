@@ -14,20 +14,24 @@ const destinations = [
         id: 1,
         title: "La grande mosquée d'Alger",
         image: "/images/grande-mosquee.jpg",
-        lat:36.73506725874315, lng:3.1405542903755954 ,
-        description:
-           "la troisième plus grande au monde, derrière la mosquée al-Haram et la mosquée du Prophète …",
+        lat: 36.73506725874315, lng: 3.1405542903755954,
+        description: "la troisième plus grande au monde, derrière la mosquée al-Haram et la mosquée du Prophète …",
+        activites: "Visite guidée, prière, découverte de l'architecture islamique moderne.",
+        conseils: "Meilleure période : toute l'année. Tenue correcte exigée.",
+       
     },
     {
-         id: 2,
+        id: 2,
         image: "/images/lac-agoulmim.jpg",
         icon: "🏔️",
-       title: "Lac Agoulmim",
+        title: "Lac Agoulmim",
         rating: 4.3,
-        lat:36.61845558503714, lng: 4.63333294977453,
-        description:
-            "un lac situé dans le massif de l'Akfadou, sur le territoire de la commune de Tibanel…",
+        lat: 36.61845558503714, lng: 4.63333294977453,
+        description: "un lac situé dans le massif de l'Akfadou, sur le territoire de la commune de Tibanel…",
         category: "Nature",
+        activites: "Randonnée, observation de la faune, photographie de paysages.",
+        conseils: "Meilleure période : printemps. Prévoir des chaussures de randonnée.",
+       
     },
     {
         id: 3,
@@ -35,22 +39,25 @@ const destinations = [
         icon: "⛰️",
         title: "Assekrem",
         rating: 4.1,
-        lat:23.306454711074895, lng: 6.3241006762704695,
-        description:
-            "L'Assekrem est un haut plateau situé dans les montagnes du Hoggar, dans le sud de l'Algérie…",
+        lat: 23.306454711074895, lng: 6.3241006762704695,
+        description: "L'Assekrem est un haut plateau situé dans les montagnes du Hoggar, dans le sud de l'Algérie…",
         category: "Nature",
+        activites: "Trekking, camping, observation du lever de soleil, astronomie.",
+        conseils: "Meilleure période : octobre à mars. Prévoir équipement chaud pour les nuits.",
+       
     },
-     {
+    {
         id: 4,
         image: "/images/cap-carbon.jpg",
         icon: "🏕️",
         title: "Cap Carbon - Bejaia",
         rating: 4.6,
-        lat: 36.7695,
-    lng: 5.1053,
-        description:
-            "Le cap Carbon est un cap algérien situé dans la wilaya de Béjaïa, au nord du port de Béjaïa…",
+        lat: 36.7695, lng: 5.1053,
+        description: "Le cap Carbon est un cap algérien situé dans la wilaya de Béjaïa, au nord du port de Béjaïa…",
         category: "Plages",
+        activites: "Baignade, plongée sous-marine, randonnée côtière, pêche.",
+        conseils: "Meilleure période : juin à septembre. Attention aux courants marins.",
+        
     },
     {
         id: 5,
@@ -58,10 +65,11 @@ const destinations = [
         icon: "🏛️",
         title: "Ruines romaines de Djemila",
         rating: 4.5,
-        lat:36.32022509269923, lng:5.736590526331529,
-        description:
-            "Le site occupe environ 42 hectares. Il a été classé au patrimoine mondial en 1982…",
+        lat: 36.32022509269923, lng: 5.736590526331529,
+        description: "Le site occupe environ 42 hectares. Il a été classé au patrimoine mondial en 1982…",
         category: "Espaces",
+        activites: "Visite archéologique, musée sur site, photographie historique.",
+        conseils: "Meilleure période : printemps / automne. Prévoir chapeau et eau en été.",
     },
     {
         id: 6,
@@ -69,10 +77,11 @@ const destinations = [
         icon: "🏰",
         title: "Le monument de Sidi Abaz - Ghardaïa",
         rating: 4.7,
-        lat:32.48634263988003, lng:3.699599561865018,
-        description:
-            "La vallée du M'Zab est classée au patrimoine mondial de l'UNESCO pour ses ksour (villages fortifiés)…",
+        lat: 32.48634263988003, lng: 3.699599561865018,
+        description: "La vallée du M'Zab est classée au patrimoine mondial de l'UNESCO pour ses ksour (villages fortifiés)…",
         category: "Villes",
+        activites: "Visite des ksour, artisanat local, découverte de la culture mozabite.",
+        conseils: "Meilleure période : novembre à mars. Éviter les mois d'été très chauds.",
     },
 ];
 
@@ -142,16 +151,16 @@ function DestinationDetails() {
 
                 {/* section bonus style cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                    <div className="p-4 border rounded-lg shadow-sm">
-                        <h3 className="font-bold mb-2">Activités</h3>
-                        <p>Découverte, tourisme, culture locale.</p>
-                    </div>
+    <div className="p-4 border rounded-lg shadow-sm">
+        <h3 className="font-bold mb-2">Activités</h3>
+        <p>{destination.activites}</p>
+    </div>
 
-                    <div className="p-4 border rounded-lg shadow-sm">
-                        <h3 className="font-bold mb-2">Conseils</h3>
-                        <p>Meilleure période : printemps / automne.</p>
-                    </div>
-                </div>
+    <div className="p-4 border rounded-lg shadow-sm">
+        <h3 className="font-bold mb-2">Conseils</h3>
+        <p>{destination.conseils}</p>
+    </div>
+</div>
             </div>
             <div className="mt-8">
     <h3 className="text-xl font-semibold mb-2">Localisation</h3>

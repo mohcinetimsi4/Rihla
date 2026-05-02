@@ -3,17 +3,19 @@ import Footer from "../components/layout/Footer";
 import { useParams } from "react-router-dom";
 import { FaHeart, FaPen } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import ReservationModal from "../components/home/ReservationModal";
 
 const hotels = [
     {
         id: 1,
         title: "Atlantis Béjaïa Aéroport",
         image: "/images/atlantis-bejaia.jpg",
-        category: "Luxe",
+        category: "Classique",
         rating: 4.6,
         description: "Hotel majestueux, restaurant spa et piscine. Situé à proximité de l'aéroport de Béjaïa, l'Atlantis offre un confort exceptionnel avec des chambres spacieuses et des installations modernes.",
-        amenities: ["Piscine", "Spa", "Restaurant", "Wifi gratuit", "Parking"],
-        price: "8 500 DA / nuit",
+        amenities: ["Piscine", "Spa", "Restaurant", "Plage Privée", "Parking","salle de fitness","salle de conférence"," Wi-Fi gratuit"],
+        price: " 12 990 DA / nuit",
+        priceNumber:  12990 ,
         address: "Béjaïa, Algérie",
     },
     {
@@ -23,52 +25,57 @@ const hotels = [
         category: "Resort",
         rating: 4.3,
         description: "Un cadre de luxe et une gamme de services conçus pour sublimer votre séjour à Staoueli. Face à la mer, ce resort offre une expérience unique.",
-        amenities: ["Plage privée", "Piscine", "Spa", "Restaurant", "Tennis"],
-        price: "15 000 DA / nuit",
+        amenities: ["Sheraton Fitness","terrains de volley-ball","Piscine", "Spa", "Restaurants", "Tennis","10 salles de réunion","espaces de conférence"],
+        price: "23 199 DA / nuit",
+        priceNumber: 23199 ,
         address: "Staoueli, Alger, Algérie",
     },
     {
         id: 3,
         title: "Royal Hotel Oran - MGallery Collection",
         image: "/images/hotel-oran.jpg",
-        category: "Classique",
+        category: "Luxe",
         rating: 4.1,
         description: "Luxe et élégance dans un superbe palace historique orné de mobilier ancien et d'œuvres d'art. Une expérience unique au cœur d'Oran.",
-        amenities: ["Restaurant gastronomique", "Bar", "Salle de conférence", "Wifi", "Conciergerie"],
-        price: "12 000 DA / nuit",
+        amenities: ["Restaurant gastronomique"," Salon de thé", "Salle de conférence", "Wifi", "Hammam","Sauna","Parking privé"],
+        price: "17 888 DA  / nuit",
+        priceNumber:17888,
         address: "Centre-ville, Oran, Algérie",
     },
     {
         id: 4,
         title: "Royal Tulip Skikda",
         image: "/images/royal-tulip-skikda.jpg",
-        category: "Luxe",
+        category: "Resort",
         rating: 4.6,
         description: "Un hôtel 5 étoiles de luxe situé à Filfila, offrant un accès direct à une plage privée et des prestations haut de gamme.",
-        amenities: ["Plage privée", "Piscine", "Spa", "Restaurant", "Wifi gratuit"],
-        price: "13 000 DA / nuit",
+        amenities: ["Centre de fitness", "Piscine", "Spa", "Restaurant", "Wifi gratuit","Parc Aquatique"],
+        price: "24 830 DA / nuit",
+        priceNumber:24830,
         address: "Filfila, Skikda, Algérie",
     },
     {
         id: 5,
         title: "Ibis Setif",
-        image: "/images/ibis-setif.jpg",
-        category: "Luxe",
+        image: "/images/ibis-setif.png",
+        category: "Classique",
         rating: 4.5,
         description: "Localisé en plein centre ville, l'ibis Sétif est le premier hôtel économique du groupe Accor dans la ville, idéal pour les voyageurs d'affaires.",
-        amenities: ["Restaurant", "Bar", "Wifi gratuit", "Parking", "Salle de sport"],
-        price: "5 500 DA / nuit",
+        amenities: ["Restaurant", "Wifi gratuit", "Parking", "Salle de sport"],
+        price: "4 962 DZD / nuit",
+        priceNumber:4962 ,
         address: "Centre-ville, Sétif, Algérie",
     },
     {
         id: 6,
         title: "Ibis Alger Aéroport",
-        image: "/images/ibis-alger-aeroport.jpg",
-        category: "Luxe",
+        image: "/images/ibis-alger.png",
+        category: "Classique",
         rating: 4.7,
         description: "Situé à 5 min de l'aéroport international Houari Boumediene, l'ibis Alger Aéroport propose 264 chambres climatisées et insonorisées.",
         amenities: ["Navette aéroport", "Restaurant", "Wifi gratuit", "Parking", "Climatisation"],
-        price: "6 000 DA / nuit",
+        price: "19 545 DA / nuit",
+        priceNumber:19545 ,
         address: "Aéroport Houari Boumediene, Alger, Algérie",
     },
 ];
@@ -80,6 +87,7 @@ function HotelDetails() {
 
     const { id } = useParams();
     const [openAvis, setOpenAvis] = useState(false);
+    const [openReservation, setOpenReservation] = useState(false);
     const [note, setNote] = useState(null);
 
     const hotel = hotels.find((h) => h.id === parseInt(id));
@@ -124,9 +132,7 @@ function HotelDetails() {
                         <span className="font-bold text-gray-800 text-lg">{hotel.rating}</span>
                         <span className="text-gray-400 text-sm">/ 5</span>
                     </div>
-                    <div className="text-right">
-                        <span className="text-2xl font-bold text-orange-500">{hotel.price}</span>
-                    </div>
+                    
                 </div>
 
                 {/* Boutons */}
@@ -163,12 +169,23 @@ function HotelDetails() {
                     <div className="p-4 border rounded-lg shadow-sm">
                         <h3 className="font-bold mb-3">Réservation</h3>
                         <p className="text-gray-500 text-sm mb-4">Meilleure période : toute l'année</p>
-                        <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition">
+                        <button
+                            onClick={() => setOpenReservation(true)}
+                            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition"
+                        >
                             Réserver maintenant
                         </button>
                     </div>
                 </div>
             </div>
+
+            {/* Modal Réservation */}
+            {openReservation && (
+                <ReservationModal
+                    hotel={hotel}
+                    onClose={() => setOpenReservation(false)}
+                />
+            )}
 
             {/* Modal Avis */}
             {openAvis && (

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const categories = ["Classique", "Luxe", "resort", "Dortoire"];
+const categories = ["Tous","Classique", "Luxe", "resort", "Dortoire"];
 
 const places = [
     {
@@ -32,7 +32,7 @@ const places = [
         rating: 4.1,
         description:
             "Luxe et élégance vous attendent au Royal Hotel MGallery Oran . Dans son superbe palace historique orné de mobilier ancien et d'oeuvres d'art…",
-        category: "Classique",
+        category: "Luxe",
     },
     {
         id: 4,
@@ -42,21 +42,21 @@ const places = [
         rating: 4.6,
         description:
             " un hôtel 5 étoiles de luxe situé à Filfila, offrant un accès direct à une plage privée. …",
-        category: "Luxe",
+        category: "Resort",
     },
     {
         id: 5,
-        image: "/images/ibis-setif.jpg",
+        image: "/images/ibis-setif.png",
         icon: "",
         name: "Ibis Setif",
         rating: 4.5,
         description:
             "Localisé en plein centre ville, l'ibis Sétif est le premier hôtel économique du groupe Accor dans la ville…",
-        category: "Luxe",
+        category: "Classique",
     },
     {
         id: 6,
-        image: "/images/ibis-alger-aeroport.jpg",
+        image: "/images/ibis-alger.png",
         icon: "",
         name: "Ibis Alger",
         rating: 4.7,
@@ -88,7 +88,7 @@ const HotelsSection = () => {
         <section className="py-16 px-6 md:px-12 max-w-6xl mx-auto">
             {/* Section Title */}
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-                Découvrez des endroits que vous allez adorer !
+                 Trouvez l'hôtel parfait pour votre séjour en Algérie 
             </h2>
 
             {/* Category Filters */}

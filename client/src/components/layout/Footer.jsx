@@ -1,3 +1,4 @@
+import { Link, useNavigate, useLocation } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className="bg-white border-t border-gray-100">
@@ -17,12 +18,20 @@ const Footer = () => {
                     <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
                         Favoris
                     </a>
-                    <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
-                        Contacter nous
-                    </a>
-                    <a href="#" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
+                     <Link 
+                to="/proposerservice" 
+                className="text-gray-600 hover:text-orange-500 text-sm transition-colors"
+            >
+                Proposer un service 
+            </Link>
+                 
+                 <Link to="/contact" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
+                        Contactez-nous
+                    </Link>
+                    <Link to="/about" className="text-gray-600 hover:text-orange-500 text-sm transition-colors">
                         À propos de nous
-                    </a>
+                    </Link>
+                    
                 </nav>
 
                 {/* CTA Button */}
